@@ -8,4 +8,4 @@ with open('1.txt') as f:
     print('Part 1:')
     print(sums[0])
     print('Part 2:')
-    print(sum(sums[0:3]))
+    print(sum(sums[:3]))
