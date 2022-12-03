@@ -12,10 +12,10 @@ p2sum = 0
 i = 1
 for line in input3:
     half = len(line) // 2
-    first_set = {*line[:half]}
-    second_set = {*line[half:]}
-    for v in first_set.intersection(second_set):
-        p1sum += priority(v)
+    first_set = { *line[:half] }
+    second_set = { *line[half:] }
+    in_both, = first_set.intersection(second_set)
+    p1sum += priority(in_both)
     
     if i == 1:
         badge_set = { *line }
@@ -23,8 +23,8 @@ for line in input3:
         rucksack_set = { *line }
         badge_set = badge_set.intersection(rucksack_set)
     if i == 3:
-        for v in badge_set:
-            p2sum += priority(v)
+        badge, = badge_set
+        p2sum += priority(badge)
     i += 1
     if i > 3:
         i = 1
