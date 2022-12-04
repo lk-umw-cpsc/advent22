@@ -48,4 +48,5 @@ int main(int argc, char **argv) {
     }
     printf("Part 1: %d\n", p1score);
     printf("Part 2: %d\n", p2score);
+    fclose(f);
 }
