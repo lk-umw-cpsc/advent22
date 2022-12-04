@@ -28,7 +28,7 @@ int main(int argc, char **argv) {
     int elf = 1;
     long p2set;
     while (fgets(buffer, 256, f)) {
-        int len = strlen(buffer) - 1;
+        int len = strlen(buffer) & (~1); // unset bit 0 to ignore newline character if it exists
         int half =  len / 2;
         unsigned long setA = stringToSet(buffer, half);
         unsigned long setB = stringToSet(buffer + half, half);
